@@ -1,0 +1,38 @@
+<div class="row bar static">
+    <div class="row faq-search">
+      <div class="col-xs-8" id="sb-search">
+        <form>
+          {{input type="sb-search-input" placeHolder="Search..." type="search" value="" name="search" id="search"}}
+        </form>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" class="btn expandAll">Expand all</button>
+        <button type="button" class="btn collapseAll">Collapse all</button>
+      </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row header">
+        <h1>Frequently Asked Questions</h1>
+    </div>
+    <div class="panel-group" id="accordian">
+        {{#each model as |data|}}
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#collapseOne">
+                        {{data.title}}
+                    </a>
+                </div>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p id="content">
+                        {{{data.content}}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

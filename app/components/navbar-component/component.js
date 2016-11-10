@@ -1,25 +1,51 @@
 import Ember from 'ember';
+import ENV from '../../config/environment';
+
+const category = 'navbar';
+const action = 'click';
 
 export default Ember.Component.extend({
+
+    metrics: Ember.inject.service(),
+
+    // TODO: remove when curation is enabled on production
+    curationEnabled: ENV.curationEnabled,
+
+    tagName: 'header',
+    classNames: ['navbar', 'navbar-inverse', 'navbar-static-top'],
     session: Ember.inject.service(),
-    gravatarSrc: '',
-    userName: '',
-    init() {
-        this._super(...arguments);
-        var userData = this.get('session.data.userData');
+
+    gravatarSrc: Ember.computed('session.data.authenticated.user', function() {
+        let userData = this.get('session.data.authenticated.user');
         if (userData) {
-            this.set('gravatarSrc', userData.gravatar);
-            this.set('userName', userData.first_name);
+            return userData.gravatar + '&s=25';
         }
-    },
+    }),
+
+    userName: Ember.computed('session.data.authenticated.user', function() {
+        let userData = this.get('session.data.authenticated.user');
+        if (userData) {
+            return `${userData.first_name} ${userData.last_name}`;
+        }
+    }),
+
     actions: {
-        login(){
-            window.location = 'http://localhost:8000/accounts/login';
-            //window.location = ENV.apiUrl + '/accounts/login?redirect_uri=' + encodeURI(window.location + '/login');
+        login() {
+            const label = 'login';
+            this.get('metrics').trackEvent({ category, action, label });
+
+            this.get('session').authenticate('authenticator:osf-token');
         },
-        logout(){
+
+        logout() {
+            const label = 'logout';
+            this.get('metrics').trackEvent({ category, action, label });
+
             this.get('session').invalidate();
-            this.get('session').set('data.userData', null);
+        },
+        track(event) {
+            const label = event;
+            this.get('metrics').trackEvent({ category, action, label });
         }
     }
 });

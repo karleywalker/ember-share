@@ -1,4 +1,153 @@
 @import 'bootstrap';
 @import 'font-awesome';
 @import 'ember-power-select';
+
+@import 'base';
+
 @import 'pod-styles';
+@import 'daterangepicker.scss';
+@import 'c3';
+@import 'registration' ;
+@import 'faq' ;
+
+
+/* Index Style */
+
+.index-jumbo {
+    max-height: 1200px ;
+    background-color: rgb(197, 214, 230);
+    padding-bottom: 40px ;
+}
+
+.index-background {
+    display: block ;
+    margin-left: auto ;
+    margin-right: auto ;
+    height: 20% ;
+    width: 20% ;
+}
+
+#index-row {
+    display: flex ;
+    justify-content: center ;
+}
+
+#index-tile-row {
+    display: flex ;
+    justify-content: center ;
+    padding-top: 40px;
+    flex-wrap: wrap ;
+}
+
+.form-control {
+    font-size: 12px ;
+    width: 100% ;
+}
+
+.index-advanced {
+    font-size: 12px ;
+}
+
+.index-tile {
+    margin :1% ;
+}
+
+.index-info {
+    background-color: white ;
+    min-height: 200px ;
+    padding-top: 25px ;
+    background-size: cover ;
+}
+
+.index-provider {
+    min-height: 400px ;
+    padding-top: 25px ;
+}
+
+.index-provider-title {
+    color: rgb(224, 235, 243) ;
+    font-family: 'Yanone Kaffeesatz' , sans-serif;
+    font-weight: bold ;
+    font-size: 40px ;
+    display: flex ;
+    justify-content: center ;
+}
+
+#index-provider-tile {
+    display: flex ;
+    justify-content: center ;
+    flex-wrap: wrap ;
+}
+
+.index-tile {
+    margin: 25px ;
+}
+
+.index-footer {
+    background-color: #dce6ef ;
+    min-height: 40px ;
+    padding: 10px ;
+}
+
+#index-copyright {
+    display: flex ;
+    justify-content: center ;
+}
+
+.share-search {
+    .search-button {
+        margin-left: -20px;
+        margin-top: 5px;
+        font-size: 150%;
+    }
+
+    .feed-button {
+        margin-left: 5px;
+        margin-top: 5px;
+        font-size: 150%;
+    }
+}
+
+/* Discover */
+
+.discover-filter-block {
+    border-radius: 5px;
+    color: white;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin: 2px;
+    background: gray;
+    display: inline-block;
+    font-size: 75%;
+    cursor: pointer;
+}
+
+.discover-filter-block:hover {
+    color: white;
+    background: gray;
+    text-decoration: none;
+}
+
+.discover-filter-list {
+    padding-top: 8px;
+}
+
+.clear-filters {
+    background-color: #f5f5f5;
+    color: #204762;
+}
+
+.btn-select {
+    background-color: #f5f5f5;
+    color: #204762;
+    height: 33px ;
+    font-size: 14px ;
+    border-color: #ccc ;
+}
+
+.no-results {
+    font-size: 15px ;
+    color: #204762;
+}

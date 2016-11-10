@@ -5,12 +5,13 @@ export default Ember.Component.extend({
     classNames: ['btn', 'btn-default', 'btn-sm'],
     classNameBindings: ['selected:active'],
 
-    selected: Ember.computed('selectedType', function() {
-        return this.get('selectedType') === this.get('type');
+    selected: Ember.computed('selectedTypes.[]', function() {
+        let selectedTypes = this.get('selectedTypes');
+        return selectedTypes.contains(this.get('type'));
     }),
 
     click() {
-        let type = this.get('selected') ? undefined : this.get('type');
-        this.sendAction('onClick', type);
+        this.$().blur();
+        this.sendAction('onClick', this.get('type'));
     }
 });

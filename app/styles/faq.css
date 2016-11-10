@@ -1,0 +1,50 @@
+.container {
+  font-family: 'Open Sans' , 'Helvetica Neue' , sans-serif;
+  -webkit-font-smoothing: antialiased ;
+}
+
+.faq-search {
+  background-color: aliceblue ;
+  padding: 10px ;
+  margin-left: 20px ;
+  margin-right: 20px ;
+}
+
+input[type=text] {
+    width: 50px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px 20px 10px 20px;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+.panel-group .panel {
+    margin: 10px ;
+    border-color: #e0ebf3 ;
+    border-width: thin;
+}
+
+.panel-heading {
+  height: 40px ;
+  background-color: default ;
+}
+
+#content {
+  padding-left: 15px ;
+  padding-right: 15px ;
+}
+
+.btn.expandAll, .btn.collapseAll{
+  background: #f5f5f5 ;
+  border-color: #ccc ;
+  border-width: thin;
+  float: right;
+  margin: 5px ;
+  vertical-align: middle;
+}
