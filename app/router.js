@@ -26,6 +26,7 @@ Router.map(function() {
         this.route('work', { path: '/:work_type/:work_id' });
     });
     this.route('changes');
+    this.route('faq');
     this.route('discover');
     this.route('profile');
     this.route('support');

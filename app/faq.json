@@ -1,0 +1,12 @@
+{
+"data": [{
+    "title": "What is SHARE?" ,
+    "content": "SHARE is a thing that does stuff."
+  }, {
+    "title": "What can this FAQ do?",
+    "content": "It can render <strong>HTML!</strong>.<br><hr><ul><li>Like lists!</li></ul>"
+  }, {
+    "title": "What if my question isn't listed",
+    "content": "<marquee>Stop asking stupid questions</marquee>"
+  }]
+}
